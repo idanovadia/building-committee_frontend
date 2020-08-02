@@ -1,0 +1,51 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+h1{
+    margin-left: 10px;
+}
+
+a{
+    font-size: 20px;
+}
+
+#mat_{
+    overflow: hidden;
+}
+
+a:hover{
+    color: orange;
+    text-decoration:none;
+}
+
+mat-icon{
+    font-size: 36px;
+    margin-right: 15px;
+}
+.mat-drawer {
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(124, 124, 124));
+}
+
+.mat-toolbar.mat-primary{
+    background-color: rgb(49, 24, 24);
+    /* background-color: rgb(197, 21, 21); */
+}
+.mat-drawer-content{
+    overflow: auto;
+}
+
+#router{
+    /* min-height: 100%;
+    max-height: 100%; */
+    min-height: 100vh;
+}
+
+.user{
+    outline: none
+}
+
+.user:hover{
+    color: burlywood;
+    background-color: #555 !important;
+}

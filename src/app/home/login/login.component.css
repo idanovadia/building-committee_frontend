@@ -1,0 +1,25 @@
+.fa-lock:before {
+    color: darkred;
+}
+
+.fa-user:before {
+    color:teal;
+}
+
+label{
+    color: white;
+}
+
+button{
+    border-radius: 0.6rem;
+    /* text-align: center; */
+    padding-bottom: 20px;
+}
+
+input{
+    color: white;
+}
+
+.form-control{
+    color: white;
+}

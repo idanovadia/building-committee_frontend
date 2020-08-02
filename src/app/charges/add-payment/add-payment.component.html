@@ -1,0 +1,24 @@
+<!-- <div id="main"> -->
+
+<div class="row tableExplanation">
+    <h2 @fade class="titleTableExplanation">Insert Payment</h2>
+</div>
+<div class="jumbotron">
+    <div class="col-12">
+        <app-add-single-payment></app-add-single-payment>
+        <div class="row newPay" #appenHere></div>
+    </div>
+    <div id="btns" class="row">
+        <div class="col-3"></div>
+        <div class="col-3">
+            <button (click)="send()" type="button" class="btn btn-outline-primary btn-rounded waves-effect">Send</button>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-3">
+            <button (click)="addNewComponent()" type="button" class="btn btn-outline-default btn-rounded waves-effect">Add</button>
+        </div>
+        
+    </div>
+</div>
+
+<!-- </div> -->

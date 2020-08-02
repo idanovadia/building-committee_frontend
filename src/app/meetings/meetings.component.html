@@ -1,0 +1,218 @@
+<div class="row text-center">
+    <div class="col-md-4">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary pad-btn btn-arrow-left"
+          mwlCalendarPreviousView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+        >
+          Previous
+        </div>
+        <div
+          class="btn btn-outline-secondary pad-btn"
+          mwlCalendarToday
+          [(viewDate)]="viewDate"
+        >
+          Today
+        </div>
+        <div
+          class="btn btn-primary pad-btn"
+          mwlCalendarNextView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+        >
+          Next
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    </div>
+    <div class="col-md-4">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary month_btn"
+          (click)="setView(CalendarView.Month)"
+          [class.active]="view === CalendarView.Month"
+        >
+          Month
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="setView(CalendarView.Week)"
+          [class.active]="view === CalendarView.Week"
+        >
+          Week
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="setView(CalendarView.Day)"
+          [class.active]="view === CalendarView.Day"
+        >
+          Day
+        </div>
+      </div>
+    </div>
+</div>
+<br />
+<div id="calender" [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="CalendarView.Month"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view
+      *ngSwitchCase="CalendarView.Day"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-day-view>
+</div>
+
+<div id="secrion2" class="row">
+    <div class="col-6">
+        <div *ngIf="getRule()" id="add_event">
+            <div class="jumbotron">
+                <div id="addEventTitle" class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <h3 id="addEventTitle">Add New Event</h3>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <form novalidate [formGroup]="form">
+                    <div class="row ">
+                        <div class="col-4">Start Event</div>
+                        <div class="col-4 ">
+                            <mat-form-field>
+                                <mat-placeholder>Start DateTime</mat-placeholder>
+                                <input matInput formControlName="startDate" [matDatetimepicker]="dts" required autocomplete="false">
+                                <mat-datetimepicker-toggle [for]="dts" matSuffix></mat-datetimepicker-toggle>
+                                <mat-datetimepicker #dts type="datetime" openOnFocus="true" timeInterval="5"></mat-datetimepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">End Event</div>
+                        <div class="col-4 ">
+                            <mat-form-field>
+                                <mat-placeholder>End DateTime</mat-placeholder>
+                                <input matInput formControlName="endDate" [matDatetimepicker]="dts2" required autocomplete="false">
+                                <mat-datetimepicker-toggle [for]="dts2" matSuffix></mat-datetimepicker-toggle>
+                                <mat-datetimepicker #dts2 type="datetime" openOnFocus="true" timeInterval="5"></mat-datetimepicker>
+                            </mat-form-field> 
+                        </div>
+                    </div>
+                
+                <div class="row">
+                    <div class="col-5">Select Participants</div>
+                    <div class="col-7">
+                        <form [formGroup]="form" novalidate>
+    
+                            <div *ngFor="let data of members; let i=index">
+                              <label>
+                                <input type="checkbox" [value]="data" (change)="onCheckboxChange($event)">
+                                {{data}}
+                              </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">Objective</div>
+                    <div class="col-8">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Objective</mat-label>
+                            <input formControlName="objective" matInput placeholder="Objective"  value="">
+                          </mat-form-field>
+                    </div>
+                </div>
+            </form>
+                <div class="row ">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <button (click)="addNewEvent()" type="button" class="btn btn-danger btn-rounded">Add new Event</button>                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-8">
+                    <span>To watch the new event Please refresh this page</span>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+      <div  class="jumbotron">
+        <div  class="row">
+          <div class="col-2"></div>
+          <div class="col-8">
+              <div class="row center">
+                  <div *ngIf="showEventDetails" class="col-12">
+                      <h3 id="addEventTitle">Event Details</h3>
+                      <h5>{{currentEvent.title | uppercase }}</h5>
+                      <span>The event will start at {{currentEvent.start}}</span>
+                      <br>
+                      <span>The event will end at {{currentEvent.end}} </span>
+                      <br>
+                  </div>
+                  <div *ngIf="!showEventDetails" class="col-12">
+                    <h3 id="addEventTitle">Event Details</h3>
+                    <span>To watch event details please click on the required event in day presentation</span>
+                  </div>
+              </div>                
+          </div>
+          <div class="col-2"></div>
+      </div>
+      </div>
+        <div *ngIf="getRule()" class="jumbotron">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="row center">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <h3 id="addEventTitle">Remove an Event</h3>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row center">
+                        <span id="removeSpan">To Delete an event Please click on the required event in day presentation and then click on the button below</span>
+                    </div>
+                    <div class="row center">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <button (click)="delEvent()" type="button" class="btn btn-danger btn-rounded">Remove Event</button>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>                   
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+  

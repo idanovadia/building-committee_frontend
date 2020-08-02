@@ -1,0 +1,75 @@
+<div id="main" class="col-12">
+    <!-- <img src="assets\images\user_up_page.jpg" class="img-fluid" alt="Responsive image"> -->
+    <div id="profile" class="row">
+        <div class="col-2 "></div>
+        <div class="col-5 profile_">
+            <div id="profile_img" class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <img src="assets/images/profile.jpg" alt="Avatar">
+                   
+                </div>
+                <div class="col-4"></div>
+            </div>
+            <div class="row info">
+                <h1>{{this.user.$username}}</h1>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-1">
+                    <mat-icon> location_on</mat-icon>
+                </div>
+                <div class="col-6">
+                    <p>{{this.user.$city | titlecase }} , {{this.user.$street | titlecase }} {{this.user.$building_number}} / {{this.user.$apartment_number}}</p>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-1">
+                    <mat-icon>perm_identity</mat-icon>
+                </div>
+                <div class="col-3">
+                    <p>{{this.user.$first_name | titlecase }} {{this.user.$last_name | titlecase }}</p>
+                </div>
+                <div class="col-1">
+                    <mat-icon> phone</mat-icon>
+                </div>
+                <div class="col-3">
+                    <p>{{this.user.$phone}}</p>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            
+            <br>
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-1">
+                    <mat-icon>verified_user</mat-icon>
+                </div>
+                <div class="col-6">
+                    <p>{{this.user.$role | titlecase }} in Group Number {{this.user.$group_number}}</p>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row info">
+                <p></p>
+            </div>
+        </div>
+        <div class="col-5">
+            <div *ngIf="getRule()" id="code" class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <div class="md-form">
+                        <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
+                        <textarea type="text" id="form8" class="md-textarea form-control" [(ngModel)]="this.user.$code" mdbInput></textarea>
+                        <label for="form8">Group Code</label>
+                        <button [cdkCopyToClipboard]="this.user.$code" type="button" class="btn btn-primary btn-rounded">Copy To Clipboard </button>
+                      </div>
+                    </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
+</div>

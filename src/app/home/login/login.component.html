@@ -1,0 +1,25 @@
+
+<!-- Material input -->
+<div class="row">
+    <div class="col-5">
+        <div class="md-form">
+            <i class="fas fa-user prefix"></i>
+            <input type="text" [(ngModel)]="user.userName" id="inputIconEx2" class="form-control">
+            <label for="inputIconEx2">Username</label>
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="md-form">
+            <i class="fas fa-lock prefix"></i>
+            <input type="password" [(ngModel)]="user.password" id="inputValidationEx2" class="form-control validate">
+            <label for="inputValidationEx2" data-error="wrong" data-success="right">Password</label>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="md-form">
+            <button (click)="login()" type="button" class="btn btn-outline-default waves-effect">Login</button>
+        </div>
+    </div>
+</div>
+
+    

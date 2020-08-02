@@ -1,0 +1,85 @@
+.myTable{
+    min-height: 700px;
+    max-height: 700px;
+    padding-top: 40px;
+    /* z-index: 100;
+    position: relative; */
+     /* margin-left: 20px; */
+ }
+ 
+ .mainTable{
+     min-height: 550px;
+     max-height: 550px;
+     /* z-index: 100; */
+     /* position: relative; */
+ }
+ 
+ .main{
+     top: 50;
+     left: 50;
+     z-index: -100;
+     position: absolute;
+     min-height: 80%;
+     max-height: 80%;
+     /* display: flex; */
+     min-width: 100%;
+     max-width: 100%;
+     background: rgb(129,1,1);
+     background: linear-gradient(29deg, rgba(129,1,1,0.9054972330729166) 18%, rgba(153,76,76,1) 45%, rgba(153,76,76,0.9026961126247374) 70%);
+     clip-path: polygon(0 30%, 0% 100%, 100% 100%);
+   }
+ 
+ .tableExplanation{
+     /* z-index: 100; */
+     text-align: center;
+     position: relative;
+     display: block;
+ }
+ 
+ .titleTableExplanation{
+     position: relative;
+     font-size: 60px;
+     text-align: center;
+     line-height: 1.6;
+     font-family: 'Open Sans Condensed', sans-serif;
+     margin: 20px 0px 30px 0px;
+ 
+ }
+ 
+ #mainTableId{
+     /* background: rgb(233,58,58);
+     background: linear-gradient(253deg, rgba(233,58,58,0.2752451322325805) 15%, rgba(190,191,193,1) 77%); */
+     
+ }
+ 
+ table th {
+     font-size: 24px;
+     font-family: 'Poppins', sans-serif;
+ }
+ 
+ table td {
+     font-size: 18px;
+     font-family: 'Poppins', sans-serif;
+     color: rgb(92, 91, 91);
+ }
+ 
+ table.table {
+     /* margin-right: 20px; */
+     width: 100%;
+     /* margin-left: 50px; */
+ }
+ 
+ .buttons_table{
+     margin-top: 50px;
+ }
+ 
+ .btn_select{
+     /* margin-left: 60px; */
+     
+ }
+ 
+ .btn_select_row{
+     /* margin-right: 250px; */
+ 
+ }
+ 

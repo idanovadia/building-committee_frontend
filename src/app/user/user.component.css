@@ -1,0 +1,69 @@
+img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.info{
+    text-align: center;
+    display: grid;
+    padding-top: 10px;
+}
+
+h1{
+    font-size: 40px;
+}
+
+p{
+    text-align: center;
+}
+
+
+#main{
+    padding: 0;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    /* height: 100px; */
+    background-image:linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%), url('../../assets/images/Property-Investment-surulere.jpg');
+    height: 450px;
+    background-size: 100% 100%;
+    /* opacity: 0.6; */
+}
+
+button{
+    border-radius: 25px;
+}
+
+textarea {
+    display: block;
+    margin: 4px 0 8px;
+    resize: none;
+  }
+  
+
+#code{
+    margin-top: 500px;
+}
+
+#main:after{
+    opacity: 0.6;
+}
+
+
+#profile{
+    /* position: absolute; */
+    margin: 0px;   
+    /* z-index: 100; */
+}
+
+.profile_{
+    box-shadow: 2px 4px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 450px;
+    margin-top: 200px;
+    opacity: 1;
+    padding-top: 15px;
+    border-radius: 50%;
+    max-width: 550px;
+}

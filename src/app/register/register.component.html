@@ -1,0 +1,202 @@
+
+    <div id="wrapper">
+      <div class="main"></div>
+      <div class="row">
+        <div class="col-6">
+            <div class="row">
+              <div class="col-12">
+                <h1>{{'Just Sign Up' | titlecase}}</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-10">
+                <p> {{'Be sure to sign up for being part of your community' | titlecase}} </p>
+              </div>
+              <div class="col-1"></div>
+            </div>
+        </div>
+        <div id="register" class="col-6">
+            <div class="row">
+                <mdb-card>
+        
+                    <mdb-card-header class="info-color white-text text-center py-4">
+                      <h5>Sign Up </h5>
+                    </mdb-card-header>
+                  
+                    <!--Card content-->
+                    <mdb-card-body class="px-lg-5 pt-0">
+                  
+                      <!-- Form -->
+                      <form class="text-center" [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate style="color: #090cd3;">
+                        <br>
+
+
+                        <div class="form-row">
+                          <div class="col">
+                            <div class="md-form">
+                              <input type="text" id="userName" formControlName="userName" name="userName"  [(ngModel)]="user.username" class="form-control" placeholder="Username" mdbInput>
+                              <div *ngIf="submitted && registerForm.controls.userName.errors">
+                                <small *ngIf="registerForm.controls.userName.errors.required" id="materialRegisterFormUserNameHelpBlock" class="form-text text-muted mb-4">
+                                  User Name is required
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="col">
+                            <div class="md-form">
+                              <input type="password" id="password" formControlName="password" name="password" [(ngModel)]="user.password" class="form-control" placeholder="Password" aria-describedby="materialRegisterFormPasswordHelpBlock"
+                               mdbInput>
+                               <div *ngIf="submitted && registerForm.controls.password.errors">
+                                <small *ngIf="registerForm.controls.password.errors.required"  id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                    Password is required
+                                </small>
+                                <small *ngIf="registerForm.controls.password.errors.minlength"  id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                  Password must be at least 8 characters
+                                </small>
+                                <small *ngIf="registerForm.controls.password.errors.maxlength"  id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                  Password must be no more then 12 characters
+                                </small>
+                                <small *ngIf="registerForm.controls.password.errors.pattern"  id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                  password must contain at least one capital letter,one small letter and one number
+                                </small>
+                               </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="col">
+                            <div class="md-form">
+                              <input type="text" id="phone"  formControlName="phone" name="phone" [(ngModel)]="user.phone" placeholder="Phone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock"
+                               mdbInput>
+                               <div *ngIf="submitted && registerForm.controls.phone.errors">
+                                <small *ngIf="registerForm.controls.phone.errors.required" id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                                  Phone is required
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="col">
+                            <!-- First name -->
+                            <div class="md-form">
+                              <input type="text" id="firstName"  formControlName="firstName" name="firstName" [(ngModel)]="user.firstName" placeholder="First name" class="form-control" mdbInput>
+                              <div *ngIf="submitted && registerForm.controls.firstName.errors">
+                                <small *ngIf="registerForm.controls.firstName.errors.required" id="materialRegisterFormFirstNameHelpBlock" class="form-text text-muted mb-4">
+                                  First Name is required
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <!-- Last name -->
+                            <div class="md-form">
+                              <input type="text" id="lastName" formControlName="lastName" name="lastName" [(ngModel)]="user.lastName" placeholder="Last name" class="form-control" mdbInput>
+                              <div *ngIf="submitted && registerForm.controls.lastName.errors">
+                                <small *ngIf="registerForm.controls.lastName.errors.required" id="materialRegisterFormLastNameHelpBlock" class="form-text text-muted mb-4">
+                                  Last Name Name is required
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="form-row">
+                            <div class="col">
+                            <div class="md-form">
+                              <input type="text" id="city" formControlName="city" name="city" [(ngModel)]="user.city" placeholder="City" class="form-control" aria-describedby="materialRegisterFormCityHelpBlock"
+                                mdbInput>
+                                <div *ngIf="submitted && registerForm.controls.city.errors">
+                                  <small *ngIf="registerForm.controls.city.errors.required" id="materialRegisterFormCityHelpBlock" class="form-text text-muted mb-4">
+                                    City is required
+                                  </small>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="md-form">
+                              <input type="text" id="street" formControlName="street" name="street" class="form-control" placeholder="Street" aria-describedby="materialRegisterFormStreetHelpBlock"
+                                mdbInput>
+                                <div *ngIf="submitted && registerForm.controls.street.errors">
+                                  <small *ngIf="registerForm.controls.street.errors.required" id="materialRegisterFormStreetHelpBlock" class="form-text text-muted mb-4">
+                                    street is required
+                                  </small>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="form-row">
+                          <div class="col">
+                            <div class="md-form">
+                              <input type="text" id="buildingNumber" formControlName="buildingNumber" name="buildingNumber" [(ngModel)]="user.buildingNumber" placeholder="building Number" class="form-control" aria-describedby="materialRegisterFormBuildingNumberHelpBlock"
+                                mdbInput>
+                                <div *ngIf="submitted && registerForm.controls.buildingNumber.errors">
+                                  <small *ngIf="registerForm.controls.buildingNumber.errors.required" id="materialRegisterFormBuildingNumberHelpBlock" class="form-text text-muted mb-4">
+                                    BuildingNumber is required
+                                  </small>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="md-form">
+                              <input type="text" id="apartmentNumber" formControlName="apartmentNumber" name="apartmentNumber" [(ngModel)]="user.apartmentNumber" placeholder="Apartment Number" class="form-control" aria-describedby="materialRegisterFormApartmentNumberHelpBlock"
+                                mdbInput>
+                                <div *ngIf="submitted && registerForm.controls.apartmentNumber.errors">
+                                  <small *ngIf="registerForm.controls.apartmentNumber.errors.required" id="materialRegisterFormApartmentNumberHelpBlock" class="form-text text-muted mb-4">
+                                    ApartmentNumber is required
+                                  </small>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="col-3">
+                            <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" formControlName="role"  value="manager" [(ngModel)]="user.role" id="defaultGroupExample1" name="role">
+                            <label class="custom-control-label" for="defaultGroupExample1">Manager</label>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                        <!-- Group of default radios - option 2 -->
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input"  formControlName="role" name="role" value="participant" [(ngModel)]="user.role" id="defaultGroupExample2"  checked>
+                          <label class="custom-control-label" for="defaultGroupExample2">Participant</label>
+                        </div>
+                        </div>
+                        <div class="col-4"></div>
+                      </div>
+                        
+                      <br>
+
+                      <div class="form-row" *ngIf="this.user.role=='participant'">
+                        <div class="col">
+                          <div class="md-form">
+                            <input type="text" id="code" formControlName="code" name="code" [(ngModel)]="user.code" placeholder="Code" class="form-control" aria-describedby="materialRegisterFormCodeHelpBlock"
+                              mdbInput>
+                              <div *ngIf="submitted && registerForm.controls.code.errors">
+                                <small *ngIf="registerForm.controls.code.errors.required" id="materialRegisterFormCodeHelpBlock" class="form-text text-muted mb-4">
+                                  Code is required
+                                </small>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+
+                        <button type="submit" class="btn btn-outline-primary btn-rounded waves-effect" >Sign Up</button>
+
+                      </form>
+                    </mdb-card-body>
+                  </mdb-card>
+            </div>
+        </div>
+      </div>
+        
+    </div>

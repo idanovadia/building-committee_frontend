@@ -1,0 +1,71 @@
+h3 {
+    margin: 0 0 10px;
+  }
+  
+  pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+  }
+
+#calender{
+    margin: 20px;
+}
+
+#add_event{
+  /* margin-top: 20px; */
+}
+
+h5{
+  font-size: 22px;
+  font-weight: bolder;
+  color: cornflowerblue;
+}
+
+.add_new_event{
+  height: 100px;
+}
+
+.btn-rounded{
+  border-radius: 25px;
+}
+mat-form-field{
+  padding-left: 20px;
+}
+
+#addEventTitle{
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+
+  /* margin-left: 80px; */
+}
+
+.center{
+  text-align: center;
+}
+
+button{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.jumbotron{
+  margin-left: 20px;
+  margin-right: 20px;
+  /* text-align: center; */
+}
+
+#removeSpan{
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#secrion2{
+  /* height: 800px; */
+}
+
+.pad-btn{
+  padding-left: 50px;
+}

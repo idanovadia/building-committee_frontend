@@ -1,0 +1,52 @@
+<div id="headline" class="col-12">
+    <div id="titles">
+        <div id="title" class="row">
+            <h1>History of Payments</h1>
+        </div>
+        <div id="title" class="row">
+            <h3>Here You Can Watch Your History of Payments</h3>
+        </div>
+        
+    </div>   
+</div>
+<div class="col-12 buttons_table">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="btn_select_row">
+        <div class="text-center">
+          <button (click)="changeTable('My Paid Payments')" class="btn_select" mdbBtn type="button" color="primary" rounded="true" outline="true" mdbWavesEffect>My Paid Payments</button>
+          <button (click)="changeTable('My Group Paid Payments')" class="btn_select" mdbBtn type="button" color="default" rounded="true" outline="true" mdbWavesEffect>My Group Paid Payments</button>
+          <button *ngIf="getRule()" (click)="changeTable('What My Group Paid In Details')" class="btn_select" mdbBtn type="button" color="secondary" rounded="true" outline="true" mdbWavesEffect>Group Charges In Details</button>
+        </div>
+        </div>   
+    </div>
+    <div class="col-2"></div> 
+  </div>
+</div>
+
+<div *ngIf="this.tableName === 'My Paid Payments'" class="col-12">
+  <app-what-ipaid></app-what-ipaid>
+</div>
+
+<div *ngIf="this.tableName === 'My Group Paid Payments'" class="col-12">
+    <div class="row tableExplanation">
+        <h2 @fade class="titleTableExplanation">My Group Payments History</h2>
+    </div>
+  <div class="row">
+    <div class="col-6">
+      <app-group-payments-paid-table></app-group-payments-paid-table>
+    </div>
+    <div class="col-5">
+      <app-group-payments-paid-chart-pai></app-group-payments-paid-chart-pai>
+    </div>
+  </div>
+</div>
+
+<div  *ngIf="this.tableName === 'What My Group Paid In Details'" class="col-12">
+  <div class="row tableExplanation">
+    <h2 @fade class="titleTableExplanation">My Group Payments History In Details</h2>
+  </div>
+  <app-my-all-group-payments></app-my-all-group-payments>
+</div>
+

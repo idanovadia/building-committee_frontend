@@ -1,0 +1,55 @@
+<div id="headline" class="col-12">
+    <div id="titles">
+        <div id="title" class="row">
+            <h1>Future Payments</h1>
+        </div>
+        <div id="title" class="row">
+            <h3>Here You Can Watch Your Future Payments</h3>
+        </div>
+        
+    </div>   
+</div>
+<div class="col-12 buttons_table">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="btn_select_row">
+        <div class="text-center">
+          <button (click)="changeTable('My Future Payments')" class="btn_select" mdbBtn type="button" color="primary" rounded="true" outline="true" mdbWavesEffect>My Future Payments</button>
+          <button (click)="changeTable('My Group Future Payments')" class="btn_select" mdbBtn type="button" color="default" rounded="true" outline="true" mdbWavesEffect>my Group Payments</button>
+          <button *ngIf="getRule()" (click)="changeTable('My Group Future Payments In Details')" class="btn_select" mdbBtn type="button" color="secondary" rounded="true" outline="true" mdbWavesEffect>Group Charges In Details</button>
+          <button *ngIf="getRule()" (click)="changeTable('Add Payment')" class="btn_select" mdbBtn type="button" color="success" rounded="true" outline="true" mdbWavesEffect>Add New Payment</button>    
+        </div>
+        </div>   
+    </div>
+    <div class="col-2"></div> 
+  </div>
+</div>
+
+<div *ngIf="this.tableName === 'My Future Payments'" class="col-12">
+  <app-my-future-payments></app-my-future-payments>
+</div>
+
+<div *ngIf="this.tableName === 'My Group Future Payments'" class="col-12">
+    <div class="row tableExplanation">
+        <h2 @fade class="titleTableExplanation">My Group Future Payments</h2>
+    </div>
+  <div class="row">
+    <div class="col-6">
+      <app-group-payments></app-group-payments>
+    </div>
+    <div class="col-5">
+      <app-group-payments-pai-chart></app-group-payments-pai-chart>
+    </div>
+  </div>
+</div>
+
+<div  *ngIf="this.tableName === 'My Group Future Payments In Details'" class="col-12">
+  <div class="row tableExplanation">
+    <h2 @fade class="titleTableExplanation">My Group Future Payments In Details</h2>
+  </div>
+  <app-my-all-group-charges></app-my-all-group-charges>
+</div>
+<div *ngIf="this.tableName === 'Add Payment'" class="col-12">
+  <app-add-payment></app-add-payment>
+</div>

@@ -1,0 +1,50 @@
+
+#headline{
+    background: rgb(58,162,233);
+    background: linear-gradient(321deg, rgba(58,162,233,0.8690826672465861) 26%, rgba(57,90,199,1) 77%);
+    height: 300px;
+}
+
+.mat-drawer-content[_ngcontent-llk-c248] {
+    overflow: hidden;
+}
+
+#titles{
+    margin-top: 30px;
+}
+
+#title{
+    text-align: center;
+    position: relative;
+    display: inherit;
+}
+
+h1{
+    padding-top: 100px;
+    font-size: 60px;
+}
+h3{
+    font-size: 20px;
+}
+
+.tableExplanation{
+    /* z-index: 100; */
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 80px;
+}
+
+.titleTableExplanation{
+    position: relative;
+    font-size: 60px;
+    text-align: center;
+    line-height: 1.6;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 20px 0px 30px 0px;
+}
+
+.buttons_table{
+    margin-top: 30px;
+}
+

@@ -1,0 +1,56 @@
+h5{
+  font-size: 43px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+
+h1{
+  color: white;
+  font-size: 76px;
+  margin-top: 150px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Karla', sans-serif;
+}
+
+p{
+  color: white;
+  text-align: center;
+  font-size: 34px;
+  line-height: 1.6;
+  font-family: 'Indie Flower', cursive;
+}
+
+#register{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.register{
+  z-index: 100;
+  position: relative;
+}
+
+
+.main{
+  top: 0;
+  left: 0;
+  z-index: -100;
+  position: absolute;
+  min-height: 100vh;
+  /* display: flex; */
+  min-width: 100%;
+  max-width: 100%;
+  background: rgb(58,162,233);
+  background: linear-gradient(321deg, rgba(58,162,233,0.8690826672465861) 24%, rgba(0,30,128,1) 86%);
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 0% 100%);
+}
+
+#wrapper{
+  position: relative;
+  overflow: hidden
+}
+
+.text-muted {
+  color: brown!important;
+}
