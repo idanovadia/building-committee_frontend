@@ -10,6 +10,7 @@ h1{
   margin-top: 150px;
   text-align: center;
   margin-bottom: 40px;
+  line-height: 1.2;
   font-family: 'Karla', sans-serif;
 }
 
@@ -53,4 +54,22 @@ p{
 
 .text-muted {
   color: brown!important;
+}
+
+@media only screen and (max-width: 768px) {
+  #register_section{
+    padding-left: 10px;
+    /* min-width: 320px; */
+    /* max-width: 100%; */
+    /* display: table-cell; */
+  }
+  .row{
+    min-width: 320px;
+    max-width: 100%;
+    display: table-cell;
+  }
+
+  #subtitle{
+    display: none;
+  }
 }
