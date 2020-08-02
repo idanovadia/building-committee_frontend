@@ -19,10 +19,8 @@ export class MeetingService {
     return this.http.get(
       'https://building-committee-backend.herokuapp.com/appointments' + path, {headers, responseType: 'text'},
     ).pipe(map((response: any) => {
-      // console.log(response);
       return JSON.parse(response);
     }), catchError((err: any) => {
-      // console.log(err);
       return throwError(err);
     }));
   }
@@ -33,10 +31,8 @@ export class MeetingService {
     return this.http.post(
       'https://building-committee-backend.herokuapp.com/appointments' + path, body, {headers, responseType: 'text'},
     ).pipe(map((response: any) => {
-      // console.log(response);
       return JSON.parse(response);
     }), catchError((err: any) => {
-      // console.log(err);
       return throwError(err);
     }));
   }
@@ -50,10 +46,8 @@ export class MeetingService {
     return this.http.delete(
       'https://building-committee-backend.herokuapp.com/appointments' + path, options
     ).pipe(map((response: any) => {
-      // console.log(response);
       return JSON.parse(response);
     }), catchError((err: any) => {
-      // console.log(err);
       return throwError(err);
     }));
   }
@@ -62,12 +56,10 @@ export class MeetingService {
     this.getMeetingReq('/getMyAppointments').subscribe(data => {
       if(data.message === 'Successfully worked') {
         const appointments = data.appointments;
-        console.log(appointments);
         this.getMyMeetingsBehaviorSubject.next(appointments);
       }
     },
     Error => {
-      // alert(JSON.parse(Error.error).error);
     });
   }
 

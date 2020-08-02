@@ -19,10 +19,8 @@ export class AddPaymentService {
     return this.http.get(
       'https://building-committee-backend.herokuapp.com/' + path, {headers,responseType: 'text'},
     ).pipe(map((response: any) => {
-      // console.log(response);
       return JSON.parse(response);
     }), catchError((err: any) => {
-      console.log(err);
       return throwError(err);
     }));
   }
@@ -31,13 +29,11 @@ export class AddPaymentService {
     this.getMembersRequest('appointments/GroupMembers').subscribe(data => {
       if(data.message === 'Successfully worked') {
         const users = data.users;
-        console.log(users);
         var elements = [];
         this.membersSubject.next(users);
       }
     },
     Error => {
-      console.log(Error.error);
       alert(JSON.parse(Error.error).error);
     });
   }

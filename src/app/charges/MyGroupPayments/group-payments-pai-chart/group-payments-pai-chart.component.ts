@@ -51,9 +51,7 @@ export class GroupPaymentsPaiChartComponent implements OnInit {
         const values: SingleDataSet = [];
         for (const elm of data) {
           this.pieChartLabels.push(elm.objective);
-          console.log(this.pieChartLabels);
           values.push(elm.debt);
-          console.log(this.pieChartData);
         }
         this.pieChartData = values;
       }

@@ -34,7 +34,6 @@ export class MyAllGroupChargesComponent implements OnInit,AfterViewInit {
 
   myFuturePaymentsInDetails() {
     this.chargesService.getGroupChargesInDetailsBehaviorSubject.subscribe(data => {
-      console.log(data);
       if(data.length !== 0 ){
         this.elements = data;
         this.mdbTable.setDataSource(this.elements);
@@ -51,7 +50,6 @@ export class MyAllGroupChargesComponent implements OnInit,AfterViewInit {
     const charge = {
       chargeID: this.elements[index].chargeID
     };
-    console.log(charge);
     await this.chargesService.pay(charge);
     this.elements.splice(index, index + 1);
   }

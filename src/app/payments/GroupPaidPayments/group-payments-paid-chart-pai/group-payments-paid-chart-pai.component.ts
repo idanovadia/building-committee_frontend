@@ -48,14 +48,11 @@ export class GroupPaymentsPaidChartPaiComponent implements OnInit {
   
   GroupCharges(){
     this.paymentsService.myGroupPaidBehaviorSubject.subscribe(data => {
-      console.log(data);
       if(data.length !== 0 ){
         const values: SingleDataSet = [];
         for (const elm of data) {
           this.pieChartLabels.push(elm.objective);
-          console.log(this.pieChartLabels);
           values.push(elm.debt);
-          console.log(this.pieChartData);
         }
         this.pieChartData = values;
       }

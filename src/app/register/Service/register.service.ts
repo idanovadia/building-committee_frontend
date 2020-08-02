@@ -17,10 +17,8 @@ export class RegisterService {
     return this.http.post(
       'https://building-committee-backend.herokuapp.com/registration', form,  {headers, responseType: 'text'},
     ).pipe(map((response: any) => {
-      // console.log(response);
       return response;
     }), catchError((err: any) => {
-      // console.log(err);
       return throwError(err);
     }));
   }

@@ -16,16 +16,13 @@ export class ChargesService {
   constructor(private http: HttpClient, private router: Router) { }
 
   private getFuturePayments = (path) => {
-    console.log("http--");
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
     return this.http.get(
       'https://building-committee-backend.herokuapp.com/charges' + path, {headers, responseType: 'text'},
     ).pipe(map((response: any) => {
-      // console.log(response);
       return JSON.parse(response);
     }), catchError((err: any) => {
-      // console.log(err);
       return throwError(err);
     }));
   }
@@ -36,10 +33,8 @@ export class ChargesService {
     return this.http.post(
       'https://building-committee-backend.herokuapp.com/charges' + path, body, {headers, responseType: 'text'},
     ).pipe(map((response: any) => {
-      // console.log(response);
       return JSON.parse(response);
     }), catchError((err: any) => {
-      // console.log(err);
       return throwError(err);
     }));
   }
@@ -67,12 +62,9 @@ export class ChargesService {
   }
 
   getMyFuturePayments = () => {
-    console.log("getMyFuturePayments-1");
     this.getFuturePayments('/myCharges').subscribe(data => {
-      console.log("getMyFuturePayments-in");
       if(data.message === 'Successfully worked') {
         const listOfCharges = data.listOfCharges;
-        console.log(listOfCharges);
         var elements = [];
         for (let i = 0; i < listOfCharges.length; i++) {
           elements.push({id: (i + 1).toString(), amount: listOfCharges[i].amount,
@@ -90,7 +82,6 @@ export class ChargesService {
     this.getFuturePayments('/myGroupCharges').subscribe(data => {
       if(data.message === 'Successfully worked') {
         const listOfCharges = data.listOfGroupCharges;
-        console.log(listOfCharges);
         var elements = [];
         for (let i = 0; i < listOfCharges.length; i++) {
           elements.push({id: (i + 1).toString(), debt: listOfCharges[i].debt,
@@ -108,7 +99,6 @@ export class ChargesService {
     this.getFuturePayments('/myAllGroupCharges').subscribe(data => {
       if(data.message === 'Successfully worked') {
         const listOfCharges = data.listOfGroupCharges;
-        console.log(listOfCharges);
         var elements = [];
         for (let i = 0; i < listOfCharges.length; i++) {
           elements.push({id: (i + 1).toString(),userName:listOfCharges[i].userName,chargeID:listOfCharges[i].chargeID,
@@ -118,8 +108,7 @@ export class ChargesService {
       }
     },
     Error => {
-      // alert(JSON.parse(Error.error).error);
-      // console.log("myAllGroupChargesError: " + Error.error);
+     
     });
   }
 }

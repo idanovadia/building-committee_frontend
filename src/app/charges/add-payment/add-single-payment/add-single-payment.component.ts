@@ -18,7 +18,6 @@ export class AddSinglePaymentComponent implements OnInit {
 
   ngOnInit(): void {
     this.addPaymentService.addPaymentBehaviorSubject.subscribe(data => {
-      console.log(data);
       if(data){
           this.addPaymentService.addSinglePaymentBehaviorSubject.next({
             userName: this.selectedMember,
@@ -31,7 +30,6 @@ export class AddSinglePaymentComponent implements OnInit {
     Error => {
     });
     this.addPaymentService.membersSubject.subscribe(data => {
-      console.log(data);
       data.forEach(element => {
         this.members.push(element.userName);
       });

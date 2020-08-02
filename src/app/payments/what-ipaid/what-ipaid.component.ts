@@ -36,7 +36,6 @@ export class WhatIPaidComponent implements OnInit,AfterViewInit {
 
   myPaidPayments(){
     this.paymentsService.whatIPaidBehaviorSubject.subscribe(data => {
-      console.log(data);
       if(data.length !== 0 ){
         this.elements = data;
         this.mdbTable.setDataSource(this.elements);
@@ -45,7 +44,6 @@ export class WhatIPaidComponent implements OnInit,AfterViewInit {
       }
     },
     Error => {
-      // this.elements = [];
     });
     this.paymentsService.myPaidPayments();
   }

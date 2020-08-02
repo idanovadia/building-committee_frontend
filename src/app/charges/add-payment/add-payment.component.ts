@@ -23,7 +23,6 @@ export class AddPaymentComponent implements OnInit{
 
   ngOnInit(): void {
     this.addPaymentService.addSinglePaymentBehaviorSubject.subscribe(data => {
-      console.log(data);
       if(data.length !== 0){
         this.paymentsArray.push(data);
       }
@@ -44,14 +43,9 @@ export class AddPaymentComponent implements OnInit{
     const listOfCharges = {
       listOfCharges: this.paymentsArray
     };
-    console.log(listOfCharges);
     this.addPaymentService.addPaymentBehaviorSubject.next(true);
     this.paymentsArray = [];
     this.chargesService.addNewCharges(listOfCharges);
-    // const nodes = document.querySelectorAll('#form')
-    // Array.from(nodes).forEach(node => {
-    //   console.log(node);
-    // })
   }
 
   add() {

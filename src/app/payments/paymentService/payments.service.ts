@@ -19,10 +19,8 @@ export class PaymentsService {
     return this.http.get(
       'https://building-committee-backend.herokuapp.com/payments' + path, {headers, responseType: 'text'},
     ).pipe(map((response: any) => {
-      // console.log(response);
       return JSON.parse(response);
     }), catchError((err: any) => {
-      // console.log(err);
       return throwError(err);
     }));
   }
@@ -64,7 +62,6 @@ export class PaymentsService {
     this.getPaidPayments('/groupPaymentsInDetails').subscribe(data => {
       if (data.message === 'Successfully worked') {
         const payments = data.payments;
-        console.log(payments);
         let elements = [];
         for (let i = 0; i < payments.length; i++) {
           elements.push({id: (i + 1).toString(), userName: payments[i].userName, amount: payments[i].

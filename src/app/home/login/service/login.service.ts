@@ -33,7 +33,6 @@ export class LoginService {
       'https://building-committee-backend.herokuapp.com/login', user,  {headers, responseType: 'text'},
     ).pipe(map((response: any) => {
       const resData = JSON.parse(response);
-      console.log(response);
       localStorage.setItem('currentUserBCE', JSON.stringify(resData.token));
       this.currentUserSubject.next(resData.token);
       return resData.message;
@@ -48,8 +47,6 @@ export class LoginService {
     const ans =  await this.http.get(
       'https://building-committee-backend.herokuapp.com/authentication',{headers}).toPromise()
       .then(result => {
-        // this.authGuard.setRole(result.role);
-        // console.log();
         return {
           role: JSON.parse(JSON.stringify(result)).role,
           permission: true,

@@ -52,7 +52,6 @@ export class MeetingsComponent implements OnInit {
       label: '<i class="fas fa-fw fa-pencil-alt"></i>',
       a11yLabel: 'Edit',
       onClick: ({ event }: { event: CalendarEvent }): void => {
-        console.log('Edited');
         this.handleEvent('Edited', event);
       },
     },
@@ -60,7 +59,6 @@ export class MeetingsComponent implements OnInit {
       label: '<i class="fas fa-fw fa-trash-alt"></i>',
       a11yLabel: 'Delete',
       onClick: ({ event }: { event: CalendarEvent }): void => {
-        console.log('Delete');
         this.events = this.events.filter((iEvent) => iEvent !== event);
         this.handleEvent('Deleted', event);
       },
@@ -100,7 +98,6 @@ export class MeetingsComponent implements OnInit {
     this.form.get('objective').enable();
 
     this.addPaymentService.membersSubject.subscribe(data => {
-      console.log(data);
       this.members = [];
       data.forEach(element => {
         this.members.push(element.userName);
@@ -132,28 +129,6 @@ export class MeetingsComponent implements OnInit {
     newStart,
     newEnd,
   }: CalendarEventTimesChangedEvent): void {
-    // console.log(newStart);
-    // let new_event = {};
-    // let change = false;
-    // this.events = this.events.map((iEvent) => {
-    //   if (iEvent.id === event.id) {
-    //     if(iEvent.start !=event.start || iEvent.end != event.end){
-    //       change = true;
-    //     }
-    //     return {
-    //       ...event,
-    //       start: newStart,
-    //       end: newEnd,
-    //     };
-    //   }
-    //   return iEvent;
-    // });
-    // console.log('change');
-    // this.handleEvent('Dropped or resized', {
-    //   ...event,
-    //   start: newStart,
-    //   end: newEnd,
-    // });
     this.handleEvent('Dropped or resized', event);
   }
 
@@ -191,8 +166,6 @@ export class MeetingsComponent implements OnInit {
     // addEvent(event)
     const formValues = this.form.value;
     if (new Date(formValues.endDate) > new Date(formValues.startDate)) {
-      console.log('greater');
-      console.log(this.form);
       this.addNewMeeting({
         start_date: formValues.startDate,
         end_date: formValues.endDate,
@@ -210,7 +183,6 @@ export class MeetingsComponent implements OnInit {
   }
 
   delEvent(){
-    console.log("del " + this.currentEvent);
     this.meetingService.deleteMeeting(this.currentEvent.id);
     this.deleteEvent(this.currentEvent);
   }
@@ -232,7 +204,6 @@ export class MeetingsComponent implements OnInit {
     this.meetingService.getMyMeetingsBehaviorSubject.subscribe(data => {
       if (data.length !== 0 ) {
         this.events  = [];
-        console.log(data);
         data.forEach(element => {
           this.addEvent(element);
         });
@@ -240,26 +211,9 @@ export class MeetingsComponent implements OnInit {
       }
     },
     Error => {
-      // this.elements = [];
     });
     this.meetingService.getMyMeetings();
   }
-
-
-
-  // getGroupMembers() {
-  //   this.meetingService.getMyGroupMembersBehaviorSubject.subscribe(data => {
-  //     this.click_month_btn();
-  //     if (data.length !== 0 ) {
-  //       console.log(data);
-  //       this.click_month_btn();
-  //     }
-  //   },
-  //   Error => {
-  //     // this.elements = [];
-  //   });
-  //   this.meetingService.getGroupMembers();
-  // }
 
   addNewMeeting(meeting: any) {
     this.meetingService.addNewMeetingBehaviorSubject.subscribe(data => {
@@ -268,7 +222,6 @@ export class MeetingsComponent implements OnInit {
       }
     },
     Error => {
-      // this.elements = [];
     });
     this.meetingService.addNewMeeting(meeting);
   }

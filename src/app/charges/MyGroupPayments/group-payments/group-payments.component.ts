@@ -36,7 +36,6 @@ export class GroupPaymentsComponent implements OnInit, AfterViewInit {
 
   GroupCharges(){
     this.chargesService.getMyGroupChargesBehaviorSubject.subscribe(data => {
-      console.log(data);
       if(data.length !== 0 ){
         this.elements = data;
         this.mdbTable.setDataSource(this.elements);

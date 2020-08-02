@@ -19,7 +19,6 @@ export class UserComponent implements OnInit {
 
   getUserDetails(){
     this.userService.getUserDetailsBehaviorSubject.subscribe(data => {
-      console.log(data);
       if (data.length !== 0 ){
         this.user = new User(
           data.userName,
@@ -35,7 +34,6 @@ export class UserComponent implements OnInit {
           data.code,
         );
       }
-      console.log(this.user);
     },
     Error => {
     });

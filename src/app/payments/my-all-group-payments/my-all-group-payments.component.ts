@@ -33,7 +33,6 @@ export class MyAllGroupPaymentsComponent implements OnInit {
 
   myFuturePaymentsInDetails() {
     this.paymentsService.myAllGroupPaidBehaviorSubject.subscribe(data => {
-      console.log(data);
       if(data.length !== 0 ){
         this.elements = data;
         this.mdbTable.setDataSource(this.elements);

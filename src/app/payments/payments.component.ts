@@ -20,7 +20,6 @@ export class PaymentsComponent implements OnInit {
   constructor(private authGuard:AuthGuard, private router: Router, private cdRef: ChangeDetectorRef, private chargesService: ChargesService) { }
 
   ngOnInit(): void {
-    console.log(`url: ${this.router.url}`);
   }
 
   changeTable(name){
