@@ -55,3 +55,18 @@ span{
     font-family: 'Open Sans Condensed', sans-serif;
     margin: 20px 0px 30px 0px;
 }
+
+@media only screen and (max-width: 768px) {
+    .jumbotron{
+        min-height: 800px;
+    }
+
+    #btns{
+        margin-top: 400px;
+    }
+
+    #add{
+        display: none;
+    }
+}
+

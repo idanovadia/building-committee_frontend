@@ -26,11 +26,11 @@
   </div>
 </div>
 
-<div *ngIf="this.tableName === 'My Future Payments'" class="col-12">
+<div *ngIf="this.tableName === 'My Future Payments'" class="col-12 section">
   <app-my-future-payments></app-my-future-payments>
 </div>
 
-<div *ngIf="this.tableName === 'My Group Future Payments'" class="col-12">
+<div *ngIf="this.tableName === 'My Group Future Payments'" class="col-12 section">
     <div class="row tableExplanation">
         <h2 @fade class="titleTableExplanation">My Group Future Payments</h2>
     </div>
@@ -44,12 +44,12 @@
   </div>
 </div>
 
-<div  *ngIf="this.tableName === 'My Group Future Payments In Details'" class="col-12">
+<div  *ngIf="this.tableName === 'My Group Future Payments In Details'" class="col-12 section">
   <div class="row tableExplanation">
     <h2 @fade class="titleTableExplanation">My Group Future Payments In Details</h2>
   </div>
   <app-my-all-group-charges></app-my-all-group-charges>
 </div>
-<div *ngIf="this.tableName === 'Add Payment'" class="col-12">
+<div *ngIf="this.tableName === 'Add Payment'" class="col-12 section">
   <app-add-payment></app-add-payment>
 </div>

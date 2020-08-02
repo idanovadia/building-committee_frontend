@@ -82,4 +82,18 @@
      /* margin-right: 250px; */
  
  }
+
+ @media only screen and (max-width: 768px) {
+    table th {
+        font-size: 12px;
+    }
+
+    table td {
+        font-size: 8px;
+    }
+
+    .titleTableExplanation{
+        font-size: 32px;
+    }
+}
  

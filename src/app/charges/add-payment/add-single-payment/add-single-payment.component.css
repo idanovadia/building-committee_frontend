@@ -13,3 +13,28 @@ span{
     /* margin-left: 20px; */
     /* padding-left: 20px; */
 }
+
+@media only screen and (max-width: 768px) {
+    .inp{
+        width: 20px;
+        margin: 30px;
+        margin-left:10px;
+    }
+
+    .mat-form_{
+        width: 150px;
+    }
+
+    #form{
+        margin-top: 30px;
+    }
+    
+    button{
+        margin-top: 150px;
+        margin-right: 150px;
+    }
+
+    #remove{
+        display: none;
+    }
+}

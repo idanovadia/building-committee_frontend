@@ -2,7 +2,7 @@
     <!-- <div class="col-1"></div> -->
     <div class="col-4 inp">
         <span>Select User</span>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="mat-form_" appearance="fill">
             <mat-label>Select me</mat-label>
             <mat-select [(ngModel)]="selectedMember">
               <mat-option [value]="member" *ngFor="let member of members">{{member}}</mat-option>
@@ -11,19 +11,19 @@
     </div>
     <div class="col-4 inp">
         <span>Enter Amount</span>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="mat-form_" appearance="fill">
             <mat-label>Enter Amount ₪</mat-label>
             <input [(ngModel)]="amount" type="number" matInput #input placeholder="Amount">
           </mat-form-field>
     </div>
     <div class="col-4 inp">
         <span>Enter Objective</span>
-        <mat-form-field appearance="fill">
+        <mat-form-field class="mat-form_" appearance="fill">
             <mat-label>Enter Objective</mat-label>
             <input [(ngModel)]="objective" matInput #input placeholder="Objective">
           </mat-form-field>
     </div>
-    <div class="col-2">
-      <button (click)="remove()" type="button" class="btn btn-outline-danger btn-rounded waves-effect">Remove</button>
+    <div class="col-2 row">
+      <button id="remove" (click)="remove()" type="button" class="btn btn-outline-danger btn-rounded waves-effect">Remove</button>
     </div>
 </div>
