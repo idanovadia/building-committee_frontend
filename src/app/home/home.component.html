@@ -1,10 +1,10 @@
-<mdb-carousel >
+<mdb-carousel id="main-mdb-carousel">
     <mdb-carousel-item>
         <img class="d-block w-100 mainImg" src="assets\images\Nashville1-1024x741.jpg" alt="First slide">
     </mdb-carousel-item>
-    <div @fade class="row">
+    <div id="upRow" @fade class="row">
         <div class="col-1"></div>
-        <div class="col-3" id="company_name">
+        <div class="col-5" id="company_name">
             <div class="row">
                 <h1 data-aos="fade-right">ManageBCE</h1>
             </div>
@@ -12,11 +12,11 @@
                 <h3>Manage Building Committee Easy</h3>
             </div>
         </div>
-        <div class="col-1"></div>
-        <div @fade class="col-6">
+        <div class="col-2"></div>
+        <div id="login" @fade class="col-3">
             <app-login></app-login>
         </div>
-        <div class="col-1"></div>
+        <!-- <div class="col-1"></div> -->
     </div>
     <br>
     <div @fade class="row">
