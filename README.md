@@ -2,13 +2,12 @@
 
 ManageBCE ( Manage Building Committee Easy ) is a platform for managing your building easy and fast
 
-## Registraion
+
 Each person can register to the system and can choose between manager and participant.
 As a manager you can watch other payments history and future payments, adding new payments and more - manager has to be one of the Building Committee.
 
 Adding new participant to building group done by send him a group code that allow him to be part of the group - a tenant in the building.
 
-## Login
 
 Each registered user can login and watch:
  * Future paymets
