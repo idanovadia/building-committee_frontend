@@ -13,10 +13,11 @@
 }
 
 h1{
-    color: white;
+    color: rgba(245, 164, 34, 0.863);
     font-size: 72px;
     line-height: 1;
     font-family: 'PT Serif', serif;
+    text-shadow: 2px 2px #ffffff;
 }
 
 h3{
@@ -45,14 +46,15 @@ h3{
 
 h2{
     line-height: 1;
-    color: rgb(160, 76, 17);
+    color: rgb(251, 251, 251);
+    text-shadow: 2px 2px #000000;
     /* margin-left: px; */
     font-weight: bolder;
     /* font-family: 'Montserrat', sans-serif; */
     /* font-family: 'Oxygen', sans-serif; */
     font-family: 'Crimson Text', serif;
 
-    font-size: 36px;
+    font-size: 42px;
 }
 
 #title_section2{
@@ -283,7 +285,6 @@ background-size: cover;
 
 @media only screen and (max-width: 768px) {
     h1{
-        color: white;
         font-size: 30px;
         line-height: 1;
         font-family: 'PT Serif', serif;
@@ -319,7 +320,7 @@ background-size: cover;
     
     h2{
         line-height: 1;
-        color: rgb(160, 76, 17);
+        /* color: rgb(160, 76, 17); */
         /* margin-left: px; */
         font-weight: bolder;
         /* font-family: 'Montserrat', sans-serif; */
