@@ -3,6 +3,7 @@ import { RegisterUserModel } from './../models/register.model';
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { FormGroup, FormBuilder,FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-register',
@@ -22,6 +23,14 @@ export class RegisterComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
+    setTimeout(() => {
+      AOS.init({
+        // delay: 700,
+        duration: 2000,
+      });
+    }, 120);
+
     this.registerForm = this.FormBuilder.group({
       'userName': [this.user.username, [
         Validators.required
